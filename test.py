@@ -121,7 +121,8 @@ if __name__ == "__main__":
     net = nn.DataParallel(net).to(device)
 
     snapshot = os.path.join(args.output_dir, 'best_model.pth')
-    if not os.path.exists(snapshot): snapshot = snapshot.replace('best_model', 'epoch_'+str(args.max_epochs-1))
+    if not os.path.exists(snapshot):
+        snapshot = snapshot.replace('best_model', 'epoch_'+str(args.max_epochs-1))
     msg = net.load_state_dict(torch.load(snapshot,map_location='cpu'))
     print("self trained swin unet",msg)
     snapshot_name = snapshot.split('/')[-1]
