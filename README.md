@@ -44,3 +44,4 @@ sh test.sh or python test.py --dataset Synapse --cfg configs/swin_tiny_patch4_wi
       primaryClass={eess.IV}
 }
 ```
+gaidong
